@@ -1,6 +1,8 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { signOut, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import { Sidebar, type Route } from '@/components/Sidebar';
 import { SearchBox } from '@/components/SearchBox';
 import { EmployeeDashboard } from '@/components/EmployeeDashboard';
@@ -34,7 +36,13 @@ export default function Page() {
 }
 
 function App() {
-  const [role, setRole] = useState<Role>('chef');
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status === 'unauthenticated') router.replace('/login');
+  }, [status, router]);
+
   const [requests, setRequests] = useState<VacationRequest[]>(REQUESTS);
   const [employees, setEmployees] = useState<Employee[]>(EMPLOYEES);
   const [assignments, setAssignments] = useState<SupportAssignment[]>(SUPPORT_ASSIGNMENTS);
@@ -48,14 +56,63 @@ function App() {
 
   const push = useToast();
 
-  const employeeUser = useMemo(
-    () => employees.find((e) => e.id === 'u14') ?? employees[1],
-    [employees]
-  );
+  // Make sure a freshly registered (or DB-only) user shows up in the in-memory
+  // employee list so the rest of the UI can find them by id.
+  useEffect(() => {
+    const sessUser = session?.user;
+    if (!sessUser?.id) return;
+    setEmployees((es) => {
+      if (es.some((e) => e.id === sessUser.id)) return es;
+      const name = sessUser.name ?? 'Ny användare';
+      const initials =
+        name
+          .split(/\s+/)
+          .filter(Boolean)
+          .slice(0, 2)
+          .map((p) => p[0]?.toUpperCase() ?? '')
+          .join('') || '??';
+      const synthetic: Employee = {
+        id: sessUser.id,
+        name,
+        initials,
+        team: '',
+        role: sessUser.role,
+        support_groups: [],
+        earned: 25,
+        saved: 0,
+        used: 0,
+      };
+      return [...es, synthetic];
+    });
+  }, [session?.user]);
+
+  const role: Role = session?.user?.role ?? 'employee';
+
+  const currentUser = useMemo<Employee | null>(() => {
+    if (!session?.user?.id) return null;
+    return employees.find((e) => e.id === session.user.id) ?? null;
+  }, [employees, session?.user?.id]);
+
   const chefUser = useMemo(
     () => employees.find((e) => e.role === 'chef') ?? employees[0],
     [employees]
   );
+
+  if (status === 'loading' || !session?.user || !currentUser) {
+    return (
+      <div
+        style={{
+          minHeight: '100vh',
+          display: 'grid',
+          placeItems: 'center',
+          color: 'var(--text-3)',
+          fontSize: 13,
+        }}
+      >
+        Laddar…
+      </div>
+    );
+  }
 
   const route = role === 'chef' ? chefRoute : empRoute;
   const setRoute = (r: Route) => {
@@ -65,7 +122,6 @@ function App() {
       setEmpRoute(r);
     }
   };
-  const currentUser = role === 'chef' ? chefUser : employeeUser;
 
   const pendingCount = requests.filter((r) => r.status === 'ansökt').length;
 
@@ -73,7 +129,7 @@ function App() {
     setRequests((rs) =>
       rs.map((r) =>
         r.id === id
-          ? { ...r, status: 'beviljad', decided_at: '2026-05-20', decided_by: 'u01' }
+          ? { ...r, status: 'beviljad', decided_at: '2026-05-20', decided_by: currentUser!.id }
           : r
       )
     );
@@ -87,7 +143,7 @@ function App() {
               ...r,
               status: 'avslagen',
               decided_at: '2026-05-20',
-              decided_by: 'u01',
+              decided_by: currentUser!.id,
               comment: comment || 'Avslagen',
             }
           : r
@@ -183,7 +239,7 @@ function App() {
     if (route === 'home') {
       screen = (
         <EmployeeDashboard
-          user={employeeUser}
+          user={currentUser}
           employees={employees}
           requests={requests}
           onNewRequest={() => setEmpRoute('new')}
@@ -195,7 +251,7 @@ function App() {
     } else if (route === 'new') {
       screen = (
         <NewRequestForm
-          user={employeeUser}
+          user={currentUser}
           requests={requests}
           editing={editingRequest}
           onSubmit={submitNewRequest}
@@ -214,7 +270,7 @@ function App() {
           requests={requests}
           assignments={assignments}
           role="employee"
-          currentUserId={employeeUser.id}
+          currentUserId={currentUser.id}
           search={search}
           onToggleAssignment={toggleAssignment}
         />
@@ -239,7 +295,7 @@ function App() {
           requests={requests}
           assignments={assignments}
           role="chef"
-          currentUserId={chefUser.id}
+          currentUserId={currentUser.id}
           search={search}
           onToggleAssignment={toggleAssignment}
         />
@@ -270,6 +326,7 @@ function App() {
         setRoute={setRoute}
         currentUser={currentUser}
         pendingCount={pendingCount}
+        onSignOut={() => signOut({ callbackUrl: '/login' })}
       />
       <div className="main">
         <header className="topbar">
@@ -285,14 +342,6 @@ function App() {
                 {subtitle}
               </span>
             )}
-            <button
-              className="btn btn-sm btn-ghost"
-              onClick={() => setRole(role === 'chef' ? 'employee' : 'chef')}
-              style={{ marginLeft: 16 }}
-              title="Växla roll (demo)"
-            >
-              Växla till {role === 'chef' ? 'anställd' : 'chef'}
-            </button>
           </div>
           <div className="topbar-r">
             {(route === 'overview' || route === 'support') && (

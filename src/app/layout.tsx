@@ -1,4 +1,7 @@
 import type { Metadata } from 'next';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
+import { AuthSessionProvider } from '@/components/SessionProvider';
 import '@/styles/globals.scss';
 
 export const metadata: Metadata = {
@@ -6,7 +9,8 @@ export const metadata: Metadata = {
   description: 'Semesterhantering med översikts- och supportkalender',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const session = await getServerSession(authOptions);
   return (
     <html lang="sv">
       <head>
@@ -21,7 +25,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <AuthSessionProvider session={session}>{children}</AuthSessionProvider>
+      </body>
     </html>
   );
 }

@@ -7,7 +7,7 @@ export type IconName =
   | 'user' | 'users' | 'settings'
   | 'chevL' | 'chevR' | 'check' | 'x' | 'dot'
   | 'bell' | 'search' | 'filter' | 'download'
-  | 'sparkle' | 'arrowR' | 'info' | 'sun' | 'eye' | 'leaf';
+  | 'sparkle' | 'arrowR' | 'info' | 'sun' | 'eye' | 'leaf' | 'logout';
 
 const PATHS: Record<IconName, JSX.Element> = {
   home: <path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-8.5Z" />,
@@ -102,6 +102,12 @@ const PATHS: Record<IconName, JSX.Element> = {
     </>
   ),
   leaf: <path d="M5 19c0-10 6-14 14-14 0 11-5 14-9 14a4 4 0 0 1-5-3 7 7 0 0 1 5-6" />,
+  logout: (
+    <>
+      <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+      <path d="M10 17l5-5-5-5M15 12H3" />
+    </>
+  ),
 };
 
 interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {

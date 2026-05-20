@@ -20,6 +20,7 @@ interface SidebarProps {
   setRoute: (r: Route) => void;
   currentUser: Employee;
   pendingCount: number;
+  onSignOut?: () => void;
 }
 
 interface NavItem {
@@ -35,6 +36,7 @@ export function Sidebar({
   setRoute,
   currentUser,
   pendingCount,
+  onSignOut,
 }: SidebarProps) {
   const employeeNav: NavItem[] = [
     { id: 'home',     label: 'Min översikt',      icon: 'home' },
@@ -87,6 +89,17 @@ export function Sidebar({
             {role === 'chef' ? 'IT-direktör' : 'Anställd'}
           </div>
         </div>
+        {onSignOut && (
+          <button
+            type="button"
+            className={styles.signOut}
+            onClick={onSignOut}
+            title="Logga ut"
+            aria-label="Logga ut"
+          >
+            <Icon name="logout" />
+          </button>
+        )}
       </div>
     </aside>
   );

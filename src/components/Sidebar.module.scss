@@ -130,3 +130,28 @@
   font-size: 11px;
   color: var(--text-3);
 }
+
+.signOut {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  color: var(--text-3);
+  cursor: default;
+  flex-shrink: 0;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  :global(.ic) {
+    width: 15px;
+    height: 15px;
+  }
+}

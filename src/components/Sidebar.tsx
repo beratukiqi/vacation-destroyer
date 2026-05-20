@@ -5,7 +5,7 @@ import { Icon, type IconName } from './ui/Icon';
 import type { Employee, Role } from '@/lib/types';
 import styles from './Sidebar.module.scss';
 
-export type EmployeeRoute = 'home' | 'new' | 'overview' | 'support';
+export type EmployeeRoute = 'home' | 'new' | 'support-new' | 'overview' | 'support';
 export type ChefRoute =
   | 'decisions'
   | 'overview'
@@ -37,10 +37,11 @@ export function Sidebar({
   pendingCount,
 }: SidebarProps) {
   const employeeNav: NavItem[] = [
-    { id: 'home',     label: 'Min översikt',      icon: 'home' },
-    { id: 'new',      label: 'Ny ansökan',        icon: 'plus' },
-    { id: 'overview', label: 'Översiktskalender', icon: 'calendar' },
-    { id: 'support',  label: 'Supportkalender',   icon: 'leaf' },
+    { id: 'home',        label: 'Min översikt',      icon: 'home' },
+    { id: 'new',         label: 'Ny ansökan',        icon: 'plus' },
+    { id: 'support-new', label: 'Lägg till support', icon: 'plus' },
+    { id: 'overview',    label: 'Översiktskalender', icon: 'calendar' },
+    { id: 'support',     label: 'Supportkalender',   icon: 'leaf' },
   ];
   const managerNav: NavItem[] = [
     { id: 'decisions', label: 'Att besluta', icon: 'inbox', badge: pendingCount },

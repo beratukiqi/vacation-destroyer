@@ -5,6 +5,7 @@ import { Sidebar, type Route } from '@/components/Sidebar';
 import { SearchBox } from '@/components/SearchBox';
 import { EmployeeDashboard } from '@/components/EmployeeDashboard';
 import { NewRequestForm } from '@/components/NewRequestForm';
+import { NewSupportForm } from '@/components/NewSupportForm';
 import { ManagerDecisions } from '@/components/ManagerDecisions';
 import { ManagerCalendar } from '@/components/ManagerCalendar';
 import { SupportCalendar } from '@/components/SupportCalendar';
@@ -116,6 +117,23 @@ function App() {
     setEditingRequest(r);
     setEmpRoute('new');
   }
+  function addSupportAssignments(newAssigns: SupportAssignment[]) {
+    if (newAssigns.length === 0) return;
+    setAssignments((as) => {
+      const existing = new Set(
+        as.map((a) => a.user_id + '|' + a.group_id + '|' + a.date)
+      );
+      const toAdd = newAssigns.filter(
+        (a) => !existing.has(a.user_id + '|' + a.group_id + '|' + a.date)
+      );
+      return [...as, ...toAdd];
+    });
+    const groupId = newAssigns[0].group_id;
+    push(
+      `Tillagd på ${SUPPORT_GROUPS[groupId].short} — ${newAssigns.length} ${newAssigns.length === 1 ? 'dag' : 'dagar'}`
+    );
+    setEmpRoute('home');
+  }
   function toggleAssignment(userId: string, groupId: SupportGroupId, date: string) {
     setAssignments((as) => {
       const idx = as.findIndex(
@@ -165,6 +183,7 @@ function App() {
           ? 'Justera datum eller dra tillbaka'
           : 'Skicka in semesteransökan',
       ],
+      'support-new': ['Lägg till support', 'Anmäl dig till support'],
       overview: ['Översiktskalender', 'Hela kontoret sommar 2026'],
       support: ['Supportkalender', 'Vem täcker support-skiftet?'],
     },
@@ -203,6 +222,17 @@ function App() {
             setEditingRequest(null);
             setEmpRoute('home');
           }}
+        />
+      );
+    } else if (route === 'support-new') {
+      screen = (
+        <NewSupportForm
+          user={employeeUser}
+          employees={employees}
+          assignments={assignments}
+          requests={requests}
+          onSubmit={addSupportAssignments}
+          onCancel={() => setEmpRoute('home')}
         />
       );
     } else if (route === 'overview') {

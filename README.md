@@ -1,3 +1,3 @@
 # vacation-destroyer
 
-Lets begin
+Lets begin, lets destroy!

@@ -1,0 +1,24 @@
+// SCSS partial — only mixins/functions. Tokens live in globals.scss as CSS custom
+// properties so they can switch via [data-theme] without recompiling.
+
+@mixin font-sans {
+  font-family: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+@mixin font-mono {
+  font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-feature-settings: 'tnum', 'zero';
+}
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin card-base {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}

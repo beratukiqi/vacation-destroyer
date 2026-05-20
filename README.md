@@ -2,7 +2,7 @@
 
 Semesteransökningsapp för Domstolsverket IT — byggd med Next.js 14 (App Router), TypeScript och SCSS-moduler.
 
-## Installation
+## Installation 1
 
 ```bash
 npm install

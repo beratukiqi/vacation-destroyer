@@ -1,0 +1,621 @@
+{
+  "version": 1,
+  "users": [
+    {
+      "id": "u01",
+      "name": "Anna Lindqvist",
+      "initials": "AL",
+      "team": "itdir",
+      "role": "chef",
+      "support_groups": [],
+      "earned": 30,
+      "saved": 4,
+      "used": 0,
+      "email": "anna.lindqvist@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u02",
+      "name": "Erik Johansson",
+      "initials": "EJ",
+      "team": "datacenter",
+      "role": "employee",
+      "support_groups": [
+        "linux",
+        "bered"
+      ],
+      "earned": 28,
+      "saved": 2,
+      "used": 6,
+      "email": "erik.johansson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u03",
+      "name": "Linnea Nilsson",
+      "initials": "LN",
+      "team": "datacenter",
+      "role": "employee",
+      "support_groups": [
+        "winsrv",
+        "bered"
+      ],
+      "earned": 30,
+      "saved": 5,
+      "used": 4,
+      "email": "linnea.nilsson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u04",
+      "name": "Hugo Olsson",
+      "initials": "HO",
+      "team": "datacenter",
+      "role": "employee",
+      "support_groups": [
+        "winsrv",
+        "dba"
+      ],
+      "earned": 25,
+      "saved": 0,
+      "used": 2,
+      "email": "hugo.olsson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u23",
+      "name": "Per Wallin",
+      "initials": "PW",
+      "team": "datacenter",
+      "role": "employee",
+      "support_groups": [
+        "nat",
+        "bered"
+      ],
+      "earned": 30,
+      "saved": 3,
+      "used": 0,
+      "email": "per.wallin@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u24",
+      "name": "Sofia Hedberg",
+      "initials": "SH",
+      "team": "datacenter",
+      "role": "employee",
+      "support_groups": [
+        "linux"
+      ],
+      "earned": 28,
+      "saved": 1,
+      "used": 5,
+      "email": "sofia.hedberg@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u05",
+      "name": "Stella Lund",
+      "initials": "SL",
+      "team": "digital",
+      "role": "employee",
+      "support_groups": [
+        "soc",
+        "incid"
+      ],
+      "earned": 30,
+      "saved": 8,
+      "used": 8,
+      "email": "stella.lund@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u06",
+      "name": "Isak Strand",
+      "initials": "IS",
+      "team": "digital",
+      "role": "employee",
+      "support_groups": [
+        "soc"
+      ],
+      "earned": 28,
+      "saved": 3,
+      "used": 5,
+      "email": "isak.strand@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u07",
+      "name": "Maja Svensson",
+      "initials": "MS",
+      "team": "digital",
+      "role": "employee",
+      "support_groups": [
+        "webb"
+      ],
+      "earned": 30,
+      "saved": 6,
+      "used": 7,
+      "email": "maja.svensson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u08",
+      "name": "Oskar Karlsson",
+      "initials": "OK",
+      "team": "digital",
+      "role": "employee",
+      "support_groups": [
+        "webb",
+        "etj"
+      ],
+      "earned": 28,
+      "saved": 1,
+      "used": 9,
+      "email": "oskar.karlsson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u25",
+      "name": "Mattias Engström",
+      "initials": "ME",
+      "team": "digital",
+      "role": "employee",
+      "support_groups": [
+        "soc",
+        "idm"
+      ],
+      "earned": 30,
+      "saved": 5,
+      "used": 0,
+      "email": "mattias.engstrom@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u26",
+      "name": "Cecilia Nyberg",
+      "initials": "CN",
+      "team": "digital",
+      "role": "employee",
+      "support_groups": [
+        "webb",
+        "etj"
+      ],
+      "earned": 30,
+      "saved": 2,
+      "used": 3,
+      "email": "cecilia.nyberg@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u27",
+      "name": "Tobias Lundqvist",
+      "initials": "TL",
+      "team": "digital",
+      "role": "employee",
+      "support_groups": [
+        "icc"
+      ],
+      "earned": 28,
+      "saved": 0,
+      "used": 4,
+      "email": "tobias.lundqvist@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u09",
+      "name": "Viktor Andersson",
+      "initials": "VA",
+      "team": "ekonomi",
+      "role": "employee",
+      "support_groups": [
+        "ea"
+      ],
+      "earned": 30,
+      "saved": 4,
+      "used": 5,
+      "email": "viktor.andersson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u10",
+      "name": "Astrid Eriksson",
+      "initials": "AE",
+      "team": "ekonomi",
+      "role": "employee",
+      "support_groups": [
+        "ea",
+        "nms"
+      ],
+      "earned": 30,
+      "saved": 7,
+      "used": 11,
+      "email": "astrid.eriksson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u28",
+      "name": "Karin Wikström",
+      "initials": "KW",
+      "team": "ekonomi",
+      "role": "employee",
+      "support_groups": [
+        "nms"
+      ],
+      "earned": 30,
+      "saved": 3,
+      "used": 4,
+      "email": "karin.wikstrom@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u29",
+      "name": "Daniel Söderberg",
+      "initials": "DS",
+      "team": "ekonomi",
+      "role": "employee",
+      "support_groups": [
+        "reg"
+      ],
+      "earned": 28,
+      "saved": 0,
+      "used": 2,
+      "email": "daniel.soderberg@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u11",
+      "name": "Lukas Persson",
+      "initials": "LP",
+      "team": "arbetsplats",
+      "role": "employee",
+      "support_groups": [
+        "itsup2",
+        "klient"
+      ],
+      "earned": 25,
+      "saved": 0,
+      "used": 3,
+      "email": "lukas.persson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u12",
+      "name": "Elin Larsson",
+      "initials": "EL",
+      "team": "arbetsplats",
+      "role": "employee",
+      "support_groups": [
+        "itsup2",
+        "klient"
+      ],
+      "earned": 28,
+      "saved": 2,
+      "used": 8,
+      "email": "elin.larsson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u13",
+      "name": "Saga Pettersson",
+      "initials": "SP",
+      "team": "arbetsplats",
+      "role": "employee",
+      "support_groups": [
+        "itsup2"
+      ],
+      "earned": 30,
+      "saved": 5,
+      "used": 6,
+      "email": "saga.pettersson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u30",
+      "name": "Henrik Bergqvist",
+      "initials": "HB",
+      "team": "arbetsplats",
+      "role": "employee",
+      "support_groups": [
+        "itsup2",
+        "klient"
+      ],
+      "earned": 30,
+      "saved": 1,
+      "used": 0,
+      "email": "henrik.bergqvist@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u31",
+      "name": "Mikaela Åberg",
+      "initials": "MÅ",
+      "team": "arbetsplats",
+      "role": "employee",
+      "support_groups": [
+        "itsup2"
+      ],
+      "earned": 28,
+      "saved": 4,
+      "used": 2,
+      "email": "mikaela.aberg@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u32",
+      "name": "Patrik Holmgren",
+      "initials": "PH",
+      "team": "arbetsplats",
+      "role": "employee",
+      "support_groups": [
+        "itsup2",
+        "klient"
+      ],
+      "earned": 30,
+      "saved": 2,
+      "used": 0,
+      "email": "patrik.holmgren@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u33",
+      "name": "Linda Norström",
+      "initials": "LL",
+      "team": "arbetsplats",
+      "role": "employee",
+      "support_groups": [],
+      "earned": 30,
+      "saved": 6,
+      "used": 5,
+      "email": "linda.norstrom@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u14",
+      "name": "Noah Berg",
+      "initials": "NB",
+      "team": "mae1",
+      "role": "employee",
+      "support_groups": [
+        "vera",
+        "itsup2"
+      ],
+      "earned": 30,
+      "saved": 3,
+      "used": 4,
+      "email": "noah.berg@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u15",
+      "name": "Wilma Ek",
+      "initials": "WE",
+      "team": "mae1",
+      "role": "employee",
+      "support_groups": [
+        "vera"
+      ],
+      "earned": 30,
+      "saved": 6,
+      "used": 10,
+      "email": "wilma.ek@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u16",
+      "name": "Adam Holm",
+      "initials": "AH",
+      "team": "mae1",
+      "role": "employee",
+      "support_groups": [
+        "vera",
+        "idm"
+      ],
+      "earned": 28,
+      "saved": 2,
+      "used": 5,
+      "email": "adam.holm@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u17",
+      "name": "Alice Berglund",
+      "initials": "AB",
+      "team": "mae1",
+      "role": "employee",
+      "support_groups": [
+        "vera",
+        "idm"
+      ],
+      "earned": 30,
+      "saved": 4,
+      "used": 7,
+      "email": "alice.berglund@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u18",
+      "name": "Leo Sjöberg",
+      "initials": "LS",
+      "team": "mae1",
+      "role": "employee",
+      "support_groups": [
+        "reg"
+      ],
+      "earned": 25,
+      "saved": 1,
+      "used": 3,
+      "email": "leo.sjoberg@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u34",
+      "name": "Sara Lindgren",
+      "initials": "SG",
+      "team": "mae1",
+      "role": "employee",
+      "support_groups": [],
+      "earned": 30,
+      "saved": 0,
+      "used": 0,
+      "email": "sara.lindgren@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u35",
+      "name": "Joakim Nordin",
+      "initials": "JN",
+      "team": "mae1",
+      "role": "employee",
+      "support_groups": [
+        "tfac",
+        "incid"
+      ],
+      "earned": 28,
+      "saved": 3,
+      "used": 0,
+      "email": "joakim.nordin@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u19",
+      "name": "Freja Forsberg",
+      "initials": "FF",
+      "team": "mae2",
+      "role": "employee",
+      "support_groups": [
+        "etj"
+      ],
+      "earned": 30,
+      "saved": 5,
+      "used": 9,
+      "email": "freja.forsberg@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u20",
+      "name": "Albin Sandberg",
+      "initials": "AS",
+      "team": "mae2",
+      "role": "employee",
+      "support_groups": [],
+      "earned": 28,
+      "saved": 3,
+      "used": 6,
+      "email": "albin.sandberg@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u21",
+      "name": "Klara Hellström",
+      "initials": "KH",
+      "team": "mae2",
+      "role": "employee",
+      "support_groups": [
+        "etj",
+        "icc"
+      ],
+      "earned": 30,
+      "saved": 7,
+      "used": 12,
+      "email": "klara.hellstrom@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u22",
+      "name": "Emil Lindström",
+      "initials": "EM",
+      "team": "mae2",
+      "role": "employee",
+      "support_groups": [
+        "etj"
+      ],
+      "earned": 30,
+      "saved": 4,
+      "used": 8,
+      "email": "emil.lindstrom@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u36",
+      "name": "Therese Björk",
+      "initials": "TB",
+      "team": "mae2",
+      "role": "employee",
+      "support_groups": [
+        "tfac"
+      ],
+      "earned": 30,
+      "saved": 2,
+      "used": 0,
+      "email": "therese.bjork@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u37",
+      "name": "Olle Magnusson",
+      "initials": "OM",
+      "team": "mae2",
+      "role": "employee",
+      "support_groups": [],
+      "earned": 28,
+      "saved": 0,
+      "used": 4,
+      "email": "olle.magnusson@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    },
+    {
+      "id": "u38",
+      "name": "Jenny Strömberg",
+      "initials": "JS",
+      "team": "mae2",
+      "role": "employee",
+      "support_groups": [
+        "reg"
+      ],
+      "earned": 30,
+      "saved": 6,
+      "used": 0,
+      "email": "jenny.stromberg@dom.se",
+      "password_hash": "$2a$10$.016urC0S3LTXDyYx11lLOycUT7r6IBjPkJzqhrtH163VtKGpRJTq",
+      "created_at": "2026-05-20T13:41:34.990Z"
+    }
+  ]
+}
